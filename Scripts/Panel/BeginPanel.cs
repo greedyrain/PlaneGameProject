@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeginPanel : BasePanel<BeginPanel>
 {
     public UIButton btnStart,btnRank,btnSetting,btnQuit;
+    AudioSource audioSource;
     public override void Init()
     {
         #region 控件绑定事件

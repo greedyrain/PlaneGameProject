@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 188863488}
   - component: {fileID: 188863487}
   m_Layer: 5
-  m_Name: BtnConfirm
+  m_Name: BtnSubmit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2286,6 +2286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnClose: {fileID: 1622435241}
+  timeLabel: {fileID: 0}
 --- !u!114 &1176600704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,8 +3031,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad40c32f41754ce187b7993343c0cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputLabel: {fileID: 0}
-  btnSubmit: {fileID: 0}
+  inputLabel: {fileID: 86082069}
+  timeLabel: {fileID: 1462707197}
+  btnSubmit: {fileID: 188863487}
 --- !u!1 &1462707195
 GameObject:
   m_ObjectHideFlags: 0

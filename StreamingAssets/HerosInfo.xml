@@ -3,14 +3,14 @@
 <HerosInfo>
 	<herosDic>
 		<int>1</int>
-		<HeroData HP="10" speed="20" volume="10" />
+		<HeroData HP="5" speed="2" volume="1" scale="15" />
 		<int>2</int>
-		<HeroData HP="20" speed="20" volume="15" />
+		<HeroData HP="2" speed="2" volume="7" scale="15"/>
 		<int>3</int>
-		<HeroData HP="30" speed="15" volume="20" />
+		<HeroData HP="3" speed="7" volume="2" scale="15"/>
 		<int>4</int>
-		<HeroData HP="100" speed="10" volume="100" />
+		<HeroData HP="10" speed="1" volume="10" scale="5"/>
 		<int>5</int>
-		<HeroData HP="50" speed="15" volume="50" />
+		<HeroData HP="5" speed="2" volume="5" scale="10"/>
 	</herosDic>
 </HerosInfo>

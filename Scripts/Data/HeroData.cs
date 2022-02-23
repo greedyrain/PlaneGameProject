@@ -11,6 +11,8 @@ public class HeroData
     public int speed;
     [XmlAttribute]
     public int volume;
+    [XmlAttribute]
+    public int scale;
 }
 
 public class HerosInfo
