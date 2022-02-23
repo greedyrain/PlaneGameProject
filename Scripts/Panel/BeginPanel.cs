@@ -10,7 +10,9 @@ public class BeginPanel : BasePanel<BeginPanel>
         #region 控件绑定事件
         btnStart.onClick.Add(new EventDelegate(()=>
         {
-            //切换到GameScene
+            //打开ChoosePanel，关闭自身；
+            ChoosePanel.Instance.ShowMe();
+            HideMe();
         }));
         btnRank.onClick.Add(new EventDelegate(() =>
         {
