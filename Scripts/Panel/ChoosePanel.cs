@@ -9,6 +9,7 @@ public class ChoosePanel : BasePanel<ChoosePanel>
     public GameObject RFX;
     public override void Init()
     {
+        CreatHero(1);
         #region 控件绑定事件
         btnClose.onClick.Add(new EventDelegate(() =>
         {
@@ -35,5 +36,11 @@ public class ChoosePanel : BasePanel<ChoosePanel>
         }));
         #endregion
         HideMe();
+    }
+
+    public void CreatHero(int key)
+    {
+        //通过Instantiate方法生成一个预设体，放到HeroPos下，然后修改其缩放；
+        HeroData hero = DataManager.Instance.HerosInfo.herosDic[key];
     }
 }

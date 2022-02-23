@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<HerosInfo>
+	<herosDic>
+		<int>1</int>
+		<HeroData HP="10" speed="20" volume="10" />
+		<int>2</int>
+		<HeroData HP="20" speed="20" volume="15" />
+		<int>3</int>
+		<HeroData HP="30" speed="15" volume="20" />
+		<int>4</int>
+		<HeroData HP="100" speed="10" volume="100" />
+		<int>5</int>
+		<HeroData HP="50" speed="15" volume="50" />
+	</herosDic>
+</HerosInfo>
