@@ -45,6 +45,7 @@ public class ChoosePanel : BasePanel<ChoosePanel>
         btnStart.onClick.Add(new EventDelegate(() =>
         {
             //开始游戏
+            DataManager.Instance.planeKey = key;
             SceneManager.LoadScene("GameScene");
         }));
         #endregion

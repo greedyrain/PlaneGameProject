@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DataManager
 {
+    public int planeKey;
     public int gameTime;//游戏时间，在GamePanel显示时清0，并随着Update增加；
     private static DataManager instance = new DataManager();
     public static DataManager Instance
@@ -61,7 +62,7 @@ public class DataManager
         data.name = name;
         data.time = time;
         rankInfo.rankList.Add(data);
-        rankInfo.rankList.Sort((a,b)=> { return a.time < b.time ? -1 : 1; });//排序-1将a放在前，1将a放在后，0则不变；
+        rankInfo.rankList.Sort((a,b)=> { return a.time > b.time ? -1 : 1; });//排序-1将a放在前，1将a放在后，0则不变；
         for (int i = 0; i < rankInfo.rankList.Count; i++)
         {
             rankInfo.rankList[i].rank = i + 1;

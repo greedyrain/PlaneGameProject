@@ -13,6 +13,8 @@ public class HeroData
     public int volume;
     [XmlAttribute]
     public int scale;
+    [XmlAttribute]
+    public int rotateSpeed;
 }
 
 public class HerosInfo
