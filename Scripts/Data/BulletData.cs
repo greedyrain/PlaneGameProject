@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class BulletData : MonoBehaviour
+public class BulletData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [XmlAttribute]
+    public int type,destroyTime;
+    [XmlAttribute]
+    public float moveSpeed,hMoveSpeed,rotateSpeed;
+    [XmlAttribute]
+    public string resName, deadEffect;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class BulletsInfo
+{
+    public List<BulletData> bullets = new List<BulletData>();
 }

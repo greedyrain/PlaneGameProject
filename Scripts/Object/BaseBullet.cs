@@ -3,20 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseBullet : MonoBehaviour
+public class BaseBullet : MonoBehaviour
 {
+    public int type;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 5);
+        type = transform.parent.GetComponent<FirePos>().type;
+        Destroy(gameObject, DataManager.Instance.BulletsInfo.bullets[type-1].destroyTime);
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    void Update()
     {
-        Move();
+        transform.Translate(Vector3.forward * DataManager.Instance.BulletsInfo.bullets[type - 1].moveSpeed);
     }
-
-    protected abstract void Move();
     
 }
