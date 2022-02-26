@@ -8,7 +8,7 @@ public class BulletData
     [XmlAttribute]
     public int type,destroyTime;
     [XmlAttribute]
-    public float moveSpeed,hMoveSpeed,rotateSpeed;
+    public float moveSpeed, amplitude, frequency, rotateSpeed;
     [XmlAttribute]
     public string resName, deadEffect;
 }

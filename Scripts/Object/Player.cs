@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
 
     public void Dead()
     {
+        Time.timeScale = 0;
         //打开GameOverPanel
         Destroy(plane,1);
         GameOverPanel.Instance.ShowMe();

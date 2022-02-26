@@ -41,6 +41,7 @@ public class FirePos : MonoBehaviour
         //重新随机一个type，重新随机CD
         type = Random.Range(1, DataManager.Instance.BulletsInfo.bullets.Count + 1);
         fireCD = Random.Range(3, 7);
+        bulletCount = Random.Range(1, 5);
         remainCD = 0;//重置CD
     }
 }
