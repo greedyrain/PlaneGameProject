@@ -36,12 +36,19 @@ public class DataManager
         get { return soundData; }
     }
 
+    private FirePosInfo firePosInfo;
+    public FirePosInfo FirePosInfo
+    {
+        get { return firePosInfo; }
+    }
+
     private DataManager()
     {
         herosInfo = XMLDataManager.Instance.LoadData(typeof(HerosInfo),"HerosInfo") as HerosInfo;
         rankInfo = XMLDataManager.Instance.LoadData(typeof(RankList), "RankInfo") as RankList;
         soundData = XMLDataManager.Instance.LoadData(typeof(SoundData), "SoundData") as SoundData;
         bulletsInfo = XMLDataManager.Instance.LoadData(typeof(BulletsInfo), "BulletsInfo") as BulletsInfo;
+        firePosInfo = XMLDataManager.Instance.LoadData(typeof(FirePosInfo), "FirePosInfo") as FirePosInfo;
     }
 
     public void SetSoundVolume(float value)

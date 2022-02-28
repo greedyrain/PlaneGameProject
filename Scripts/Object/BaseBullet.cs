@@ -17,7 +17,7 @@ public class BaseBullet : MonoBehaviour
     void Start()
     {
         target = FindObjectOfType<Player>().transform.GetChild(0);
-        type = transform.parent.GetComponent<FirePos>().type;
+        type = transform.parent.GetComponent<FirePos>().bulletType;
         bulletData = DataManager.Instance.BulletsInfo.bullets[type-1];
         Destroy(gameObject, bulletData.destroyTime);
     }
@@ -34,8 +34,6 @@ public class BaseBullet : MonoBehaviour
         transform.Translate(Vector3.forward * bulletData.moveSpeed);
         switch (type)
         {
-            case 1://直线移动
-                break;
             case 2://正弦移动
                 rad += Time.deltaTime * bulletData.frequency;
                 transform.Translate(Vector3.right * bulletData.amplitude * Mathf.Sin(rad));

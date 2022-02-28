@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FirePos : MonoBehaviour
 {
-    public int type,bulletCount;
-    float fireCD, remainCD,moveSpeed;
+    //根据id随机去表里读取一个数据，来生成该点的数据，
+    FirePosData firePosData;
+    public int bulletType,bulletCount,id;
+    float fireCD, remainCD;
     
     // Start is called before the first frame update
     void Start()
@@ -27,21 +29,23 @@ public class FirePos : MonoBehaviour
 
     void Fire()
     {
-        for (int i = 0; i < bulletCount; i++)//生成子弹实例
+        Reset();
+        for (int i = 0; i < firePosData.num; i++)//生成子弹实例
         {
-            GameObject bullet = Instantiate(Resources.Load<GameObject>($"Bullet/Bullet{type}"), transform);
-            bullet.transform.rotation = Quaternion.AngleAxis(90 / bulletCount * i, Vector3.up);//修改子弹的面朝向；
+            GameObject bullet = Instantiate(Resources.Load<GameObject>($"Bullet/Bullet{bulletType}"), transform);
+            bullet.transform.rotation = Quaternion.AngleAxis(90 / firePosData.num * i, Vector3.up);//修改子弹的面朝向；
             bullet.AddComponent<BaseBullet>();//给子弹添加脚本，让其自动完成移动、自毁相关功能
         }
-        Reset();
     }
 
     private void Reset()
     {
-        //重新随机一个type，重新随机CD
-        type = Random.Range(1, DataManager.Instance.BulletsInfo.bullets.Count + 1);
-        fireCD = Random.Range(3, 7);
-        bulletCount = Random.Range(1, 5);
+        //重新随机一个id,去调取Xml中的对应的FirePos配置，获取type等的数据；
+        id = Random.Range(0, DataManager.Instance.FirePosInfo.firePoses.Count);//获得随机数；
+        firePosData = DataManager.Instance.FirePosInfo.firePoses[id];//读取对应的数据；
+        bulletType = firePosData.type;
+        fireCD = firePosData.coolDown;
+        bulletCount = firePosData.num;
         remainCD = 0;//重置CD
     }
 }

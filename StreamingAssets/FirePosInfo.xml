@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<FirePosInfo>
+	<firePoses>
+		<FirePosData id="1" type="1" num="3" coolDown="5" />
+		<FirePosData id="2" type="1" num="5" coolDown="5" />
+		<FirePosData id="3" type="2" num="3" coolDown="5" />
+		<FirePosData id="4" type="2" num="5" coolDown="5" />
+		<FirePosData id="5" type="3" num="3" coolDown="5" />
+		<FirePosData id="6" type="3" num="5" coolDown="5" />
+		<FirePosData id="7" type="4" num="3" coolDown="5" />
+		<FirePosData id="8" type="4" num="5" coolDown="5" />
+		<FirePosData id="9" type="5" num="3" coolDown="5" />
+		<FirePosData id="10" type="5" num="5" coolDown="5" />
+	</firePoses>
+</FirePosInfo>
