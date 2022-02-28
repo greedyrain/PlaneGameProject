@@ -16,6 +16,7 @@ public class GamePanel : BasePanel<GamePanel>
             Time.timeScale = 0;
             ExitPanel.Instance.ShowMe();
         }));
+        Time.timeScale = 1;
         #endregion
     }
 

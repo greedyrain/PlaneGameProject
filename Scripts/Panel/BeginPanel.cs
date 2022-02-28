@@ -30,6 +30,7 @@ public class BeginPanel : BasePanel<BeginPanel>
             //退出游戏；
             Application.Quit();
         }));
+        Time.timeScale = 1;
         #endregion
     }
 }

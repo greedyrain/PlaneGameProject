@@ -12,12 +12,14 @@ public class ExitPanel : BasePanel<ExitPanel>
         btnConfirm.onClick.Add(new EventDelegate(()=>
         {
             //打开BeginPanel，关闭自己，关闭GamePanel；
+            Time.timeScale = 1;
             SceneManager.LoadScene("BeginScene");
         }));
 
         btnCancel.onClick.Add(new EventDelegate(() =>
         {
             //关闭自己；
+            Time.timeScale = 1;
             HideMe();
         }));
         HideMe();

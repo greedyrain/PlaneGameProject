@@ -24,6 +24,7 @@ public class GameOverPanel : BasePanel<GameOverPanel>
     public override void ShowMe()
     {
         base.ShowMe();
+        Time.timeScale = 0;
         timeLabel.text = DataManager.Instance.gameTime.ToString();//每次打开该面板，则直接更改面板上显示的时间；
     }
 }
