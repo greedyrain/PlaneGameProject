@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private static Player instance;
+    public static Player Instance
+    {
+        get { return instance; }
+    }
     int planeKey;
     GameObject plane;
     public float moveH, moveV, moveSpeed, rotateSpeed;
@@ -13,6 +18,11 @@ public class Player : MonoBehaviour
     Quaternion quat;
     Vector3 scPos, lastPos;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         planeKey = DataManager.Instance.planeKey;

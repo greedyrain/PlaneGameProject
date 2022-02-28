@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum E_FirePos
+{
+    TopLeft, TopCenter, TopRight, Left, Right, BottomLeft, BottomCenter, BottomRight
+}
 
 public class FirePos : MonoBehaviour
 {
     //根据id随机去表里读取一个数据，来生成该点的数据，
+    public E_FirePos e_FirePos = E_FirePos.TopLeft;
+    private Vector3 screenPos;
     FirePosData firePosData;
     public int bulletType,bulletCount,id;
     float fireCD, remainCD;
@@ -18,6 +24,7 @@ public class FirePos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetPosition();
         //根据时间开火
         remainCD += Time.deltaTime;
         if (remainCD >= fireCD)
@@ -25,6 +32,7 @@ public class FirePos : MonoBehaviour
             Fire();
         }
         //无时无刻移动
+        
     }
 
     void Fire()
@@ -47,5 +55,55 @@ public class FirePos : MonoBehaviour
         fireCD = firePosData.coolDown;
         bulletCount = firePosData.num;
         remainCD = 0;//重置CD
+    }
+
+    void SetPosition()
+    {
+        screenPos.z = 0;
+        switch (e_FirePos)
+        {
+            case E_FirePos.TopLeft:
+                screenPos.x = 0;
+                screenPos.y = Screen.height;
+                transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+                break;
+            case E_FirePos.TopCenter:
+                screenPos.x = Screen.width / 2;
+                screenPos.y = Screen.height;
+                transform.rotation = Quaternion.AngleAxis(135, Vector3.up);
+                break;
+            case E_FirePos.TopRight:
+                screenPos.x = Screen.width;
+                screenPos.y = Screen.height;
+                transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+                break;
+            case E_FirePos.Left:
+                screenPos.x = 0;
+                screenPos.y = Screen.height / 2;
+                transform.rotation = Quaternion.AngleAxis(45, Vector3.up);
+                break;
+            case E_FirePos.Right:
+                screenPos.x = Screen.width;
+                screenPos.y = Screen.height / 2;
+                transform.rotation = Quaternion.AngleAxis(-45, Vector3.up);
+                break;
+            case E_FirePos.BottomLeft:
+                screenPos.x = 0;
+                screenPos.y = 0;
+                transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
+                break;
+            case E_FirePos.BottomCenter:
+                screenPos.x = Screen.width / 2;
+                screenPos.y = 0;
+                transform.rotation = Quaternion.AngleAxis(-45, Vector3.up);
+                break;
+            case E_FirePos.BottomRight:
+                screenPos.x = Screen.width;
+                screenPos.y = 0;
+                transform.rotation = Quaternion.AngleAxis(-90, Vector3.up);
+                break;
+        }
+        transform.position = Camera.main.ScreenToWorldPoint(screenPos);
+        print(screenPos);
     }
 }
