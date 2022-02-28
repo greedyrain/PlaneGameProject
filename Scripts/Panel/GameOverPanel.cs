@@ -15,6 +15,7 @@ public class GameOverPanel : BasePanel<GameOverPanel>
             //将inputLabel的信息存储，同时记录游戏时间，存储到RankData中；
             DataManager.Instance.UpdateRankList(DataManager.Instance.gameTime, inputLabel.value);
             XMLDataManager.Instance.SaveData(DataManager.Instance.RankInfo, "RankInfo");
+            Time.timeScale = 1;
             SceneManager.LoadScene("BeginScene");
         }));
         HideMe();

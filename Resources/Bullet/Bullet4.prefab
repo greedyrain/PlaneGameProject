@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004044954168423458}
   - component: {fileID: 1004044954168423469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,13 +53,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1004044954168423458}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
       propertyPath: m_Name
       value: LifeDome
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164878, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 0eed9fcd74c2ba2449a54bb890668e8c, type: 3}
       propertyPath: m_RootOrder

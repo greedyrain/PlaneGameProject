@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6256884913412181490}
   - component: {fileID: 6256884913412181493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,9 +53,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6256884913412181490}
     m_Modifications:
+    - target: {fileID: 100000, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
       propertyPath: m_Name
       value: FrostDome
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 101686, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 131704, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 8a0d1fb7d743833459329b139206cca1, type: 3}
       propertyPath: m_RootOrder

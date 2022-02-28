@@ -19,7 +19,7 @@ public class BaseBullet : MonoBehaviour
         target = FindObjectOfType<Player>().transform.GetChild(0);
         type = transform.parent.GetComponent<FirePos>().bulletType;
         bulletData = DataManager.Instance.BulletsInfo.bullets[type-1];
-        Destroy(gameObject, bulletData.destroyTime);
+        Invoke("Dead", bulletData.destroyTime);
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class BaseBullet : MonoBehaviour
 
     private void BulletMove(int type)
     {
-        transform.Translate(Vector3.forward * bulletData.moveSpeed);
+        transform.Translate(Vector3.forward * bulletData.moveSpeed * Time.deltaTime);
         switch (type)
         {
             case 2://正弦移动
@@ -49,16 +49,14 @@ public class BaseBullet : MonoBehaviour
                 break;
         }
         WTSPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (WTSPos.x <= 0 || WTSPos.x >= Screen.width || WTSPos.y <= 0 || WTSPos.y >= Screen.height)
+        if (WTSPos.x < 0 || WTSPos.x > Screen.width || WTSPos.y < 0 || WTSPos.y > Screen.height)
             Destroy(gameObject);
     }
 
     public void Dead()
     {
         //被鼠标点击时，先创建一个特效
-        GameObject effObj = Instantiate(Resources.Load<GameObject>(bulletData.deadEffect));
-        //设置特效的位置
-        effObj.transform.position = transform.position;
+        GameObject effObj = Instantiate(Resources.Load<GameObject>(bulletData.deadEffect),transform.position,transform.rotation);
         //一秒后销毁特效
         Destroy(effObj, 1f);
         //销毁子弹

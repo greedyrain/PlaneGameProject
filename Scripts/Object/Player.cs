@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
         get { return instance; }
     }
     int planeKey;
+    Ray mouseRay;
+    RaycastHit hitInfo;
     GameObject plane;
     public float moveH, moveV, moveSpeed, rotateSpeed;
     public int HP;
@@ -29,13 +31,14 @@ public class Player : MonoBehaviour
         HP = DataManager.Instance.HerosInfo.herosDic[planeKey].HP;
         moveSpeed = DataManager.Instance.HerosInfo.herosDic[planeKey].speed * 50;
         rotateSpeed = DataManager.Instance.HerosInfo.herosDic[planeKey].rotateSpeed;
-        print(HP);
         plane = Instantiate(Resources.Load<GameObject>($"Airplane/Airplane{planeKey}"), transform);
+        GamePanel.Instance.SetHP(HP);
     }
 
     // Update is called once per frame
     void Update()
     {
+        ClickToDestroy();
         if (isDead)
         {
             Dead();
@@ -66,14 +69,14 @@ public class Player : MonoBehaviour
             plane.transform.position = new Vector3(plane.transform.position.x, plane.transform.position.y, lastPos.z);
     }
 
-    public void GetHurt(int num)//传入一个数值，就能够设置玩家的血量；
+    public void GetHurt(int damage)//传入一个数值，就能够设置玩家的血量；
     {
-        HP -= num;
+        HP -= damage;
         if (HP <=0)
         {
             isDead = true;
         }
-        GamePanel.Instance.SetHP(num);
+        GamePanel.Instance.SetHP(HP);
     }
 
     public void Dead()
@@ -82,5 +85,16 @@ public class Player : MonoBehaviour
         //打开GameOverPanel
         Destroy(plane,1);
         GameOverPanel.Instance.ShowMe();
+    }
+    void ClickToDestroy()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(mouseRay, out hitInfo, 1000, 1 << LayerMask.NameToLayer("Bullet")))
+            {
+                hitInfo.transform.GetComponent<BaseBullet>().Dead();
+            }
+        }
     }
 }

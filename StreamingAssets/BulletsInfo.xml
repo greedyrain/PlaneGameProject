@@ -2,10 +2,10 @@
 <?mso-application progid="Word.Document"?>
 <BulletsInfo>
 	<bullets>
-		<BulletData type="1" destroyTime="5" moveSpeed="2" amplitude="0" frequency="0" rotateSpeed="0" resName="Bullet/Bullet1" deadEffect="DeadEff"/>
-		<BulletData type="2" destroyTime="5" moveSpeed="2" amplitude="2" frequency="2" rotateSpeed="0" resName="Bullet/Bullet2" deadEffect="DeadEff"/>
-		<BulletData type="3" destroyTime="5" moveSpeed="2" amplitude="0" frequency="0" rotateSpeed="20" resName="Bullet/Bullet3" deadEffect="DeadEff"/>
-		<BulletData type="4" destroyTime="5" moveSpeed="2" amplitude="0" frequency="0" rotateSpeed="20" resName="Bullet/Bullet4" deadEffect="DeadEff"/>
-		<BulletData type="5" destroyTime="5" moveSpeed="2" amplitude="0" frequency="0" rotateSpeed="10" resName="Bullet/Bullet5" deadEffect="DeadEff"/>
+		<BulletData type="1" destroyTime="5" moveSpeed="25" amplitude="0" frequency="0" rotateSpeed="0" resName="Bullet/Bullet1" deadEffect="DeadEff" />
+		<BulletData type="2" destroyTime="5" moveSpeed="25" amplitude="2" frequency="2" rotateSpeed="0" resName="Bullet/Bullet2" deadEffect="DeadEff" />
+		<BulletData type="3" destroyTime="5" moveSpeed="25" amplitude="0" frequency="0" rotateSpeed="2" resName="Bullet/Bullet3" deadEffect="DeadEff" />
+		<BulletData type="4" destroyTime="5" moveSpeed="25" amplitude="0" frequency="0" rotateSpeed="2" resName="Bullet/Bullet4" deadEffect="DeadEff" />
+		<BulletData type="5" destroyTime="5" moveSpeed="25" amplitude="0" frequency="0" rotateSpeed="1" resName="Bullet/Bullet5" deadEffect="DeadEff" />
 	</bullets>
 </BulletsInfo>
